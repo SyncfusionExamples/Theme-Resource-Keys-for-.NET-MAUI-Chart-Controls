@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             x:Class="ChartControlsThemeDemo.SfCartesianChartThemeKeys">
+
+
+    <x:String x:Key="SfCartesianChartTheme">CommonTheme</x:String>
+
+    <Color x:Key="SfCartesianChartBackground"/>
+
+         <!--Grid Line, Axis Line, Tick Line--> 
+    <Color x:Key="SfCartesianChartMajorGridLineStroke"/>
+    <Color x:Key="SfCartesianChartMinorGridLineStroke"/>
+    <Color x:Key="SfCartesianChartMajorTickLineStroke"/>
+    <Color x:Key="SfCartesianChartMinorTickLineStroke"/>
+    <Color x:Key="SfCartesianChartAxisLineStroke"/>
+    
+        <!--Axis Title-->
+    <Color x:Key="SfCartesianChartAxisTitleTextColor"/>
+    <Color x:Key="SfCartesianChartAxisTitleBackground"/>
+    <Color x:Key="SfCartesianChartAxisTitleStroke"/>
+    <sys:Double x:Key="SfCartesianChartAxisTitleCornerRadius"/>
+    <sys:Double x:Key="SfCartesianChartAxisTitleTextFontSize"/>
+
+         <!--Axis Label-->
+    <Color x:Key="SfCartesianChartAxisLabelTextColor"/>
+    <Color x:Key="SfCartesianChartAxisLabelBackground"/>
+    <Color x:Key="SfCartesianChartAxisLabelStroke"/>
+    <sys:Double x:Key="SfCartesianChartAxisLabelCornerRadius"/>
+    <sys:Double x:Key="SfCartesianChartAxisLabelTextFontSize"/>
+
+         <!--Trackball-->
+    <Color x:Key="SfCartesianChartTrackballLineStroke"/>
+    <Color x:Key="SfCartesianChartTrackballLabelBackground"/>
+    <Color x:Key="SfCartesianChartTrackballLabelStroke"/>
+    <Color x:Key="SfCartesianChartTrackballLabelTextColor"/>
+    <sys:Double x:Key="SfCartesianChartTrackballLabelCornerRadius"/>
+    <sys:Double x:Key="SfCartesianChartTrackballLabelTextFontSize"/>
+
+          <!--Axis Trackball-->
+    <Color x:Key="SfCartesianChartTrackballAxisLabelBackground"/>
+    <Color x:Key="SfCartesianChartTrackballAxisLabelStroke"/>
+    <Color x:Key="SfCartesianChartTrackballAxisLabelTextColor"/>
+    <sys:Double x:Key="SfCartesianChartTrackballAxisLabelCornerRadius"/>
+    <sys:Double x:Key="SfCartesianChartTrackballAxisLabelTextFontSize"/>
+
+          <!--Annotation-->
+    <Color x:Key="SfCartesianChartShapeAnnotationFill"/>
+    <Color x:Key="SfCartesianChartShapeAnnotationStroke"/>
+    <Color x:Key="SfCartesianChartAnnotationTextColor"/>
+    <Color x:Key="SfCartesianChartAnnotationTextBackground"/>
+    <Color x:Key="SfCartesianChartLineAnnotationStroke"/>
+
+           <!--Tooltip-->
+    <Color x:Key="SfCartesianChartTooltipBackground"/>
+    <Color x:Key="SfCartesianChartTooltipTextColor"/>
+    <sys:Double x:Key="SfCartesianChartTooltipTextFontSize"/>
+
+            <!--Legend-->
+    <Color x:Key="SfCartesianChartLegendTextColor"/>
+    <sys:Double x:Key="SfCartesianChartLegendFontSize"/>
+    <Color x:Key="SfCartesianChartLegendDisableBrush"/>
+
+
+</ResourceDictionary>
