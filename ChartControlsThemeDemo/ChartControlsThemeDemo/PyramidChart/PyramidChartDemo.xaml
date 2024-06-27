@@ -26,8 +26,7 @@
         </chart:SfPyramidChart.Legend>
        
         <chart:SfPyramidChart.Title>
-            <Label Text="Average Rates of Learning Retention" HorizontalOptions="Fill" HorizontalTextAlignment="Center"
-                   VerticalOptions="Center" FontSize="16"/>
+              <Label FontSize="17" Text="Average Rates of Learning Retention"  HorizontalTextAlignment="Center"/>
         </chart:SfPyramidChart.Title>
     </chart:SfPyramidChart>
 

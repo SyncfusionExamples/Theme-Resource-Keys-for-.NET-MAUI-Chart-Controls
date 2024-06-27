@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:chart="clr-namespace:Syncfusion.Maui.SunburstChart;assembly=Syncfusion.Maui.SunburstChart"
+             xmlns:chart="clr-namespace:Syncfusion.Maui.SunburstChart;assembly=Syncfusion.Maui.SunburstChart"   
              xmlns:local="clr-namespace:ChartControlsThemeDemo"
              x:Class="ChartControlsThemeDemo.SunburstChartDemo">
 
@@ -9,12 +9,12 @@
         <local:SunburstViewModel/>
     </ContentPage.BindingContext>
 
-    <chart:SfSunburstChart x:Name="sunburstChart" ItemsSource="{Binding DataSource}" 
+    <chart:SfSunburstChart x:Name="sunburstChart" ItemsSource="{Binding DataSource}"
                             ValueMemberPath="Sales" ShowLabels="True"
                             PaletteBrushes="{Binding CustomBrush}" InnerRadius="0.2" EnableTooltip="True">
 
         <chart:SfSunburstChart.Title>
-            <Label Text="Visual Perspective of Sales Performance" FontAttributes="Bold" Margin="0" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="18"/>
+            <Label FontSize="17" Text="Visual Perspective of Sales Performance" HorizontalTextAlignment="Center"/>
         </chart:SfSunburstChart.Title>
 
         <chart:SfSunburstChart.Legend>

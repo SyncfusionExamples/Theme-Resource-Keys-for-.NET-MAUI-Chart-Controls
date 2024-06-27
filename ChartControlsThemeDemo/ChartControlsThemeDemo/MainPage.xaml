@@ -4,6 +4,4 @@
              xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
              x:Class="ChartControlsThemeDemo.MainPage">
 
-
-
 </ContentPage>
