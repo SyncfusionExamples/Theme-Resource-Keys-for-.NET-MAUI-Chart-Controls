@@ -5,23 +5,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
     xmlns:local="clr-namespace:ChartControlsThemeDemo"
     xmlns:switch="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
-    Shell.FlyoutBehavior="Flyout"
+    Shell.FlyoutBehavior="Disabled"
     Title="ChartControlsThemeDemo">
 
-    <ShellContent Route="page1" Title="Cartesian Chart" ContentTemplate="{DataTemplate local:CartesianChartDemo}"  />
-    <ShellContent Route="page2" Title="Circular Chart" ContentTemplate="{DataTemplate local:CircularChartDemo}" />
-    <ShellContent Route="page3" Title="Funnel Chart" ContentTemplate="{DataTemplate local:FunnelChartDemo}"  />
-    <ShellContent Route="page4" Title="Pyramid Chart" ContentTemplate="{DataTemplate local:PyramidChartDemo}" />
-    <ShellContent Route="page5" Title="Sunburst Chart" ContentTemplate="{DataTemplate local:SunburstChartDemo}" />
+    <ShellContent
+     ContentTemplate="{DataTemplate local:MainPage}"
+     Route="MainPage" />
 
-    <Shell.FlyoutFooter>
-        <Border StrokeShape="RoundRectangle 10" StrokeThickness="1.5" Margin="20" HorizontalOptions="Fill" 
-              Padding="20" Stroke="#2a1d45">
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
-                <Label Text="Change Theme" VerticalOptions="Center" FontSize="18" FontAttributes="Bold" TextColor="{AppThemeBinding Light=Black, Dark=White}"/>
-                <switch:SfSwitch x:Name="switch"  Margin="15,0,0,0" IsOn="False" StateChanged="switch_StateChanged"/>
-            </StackLayout>
-        </Border>
-    </Shell.FlyoutFooter>
-    
 </Shell>

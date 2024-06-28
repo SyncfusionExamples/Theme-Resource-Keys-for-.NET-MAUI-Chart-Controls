@@ -2,6 +2,239 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
+             xmlns:sunburst="clr-namespace:Syncfusion.Maui.SunburstChart;assembly=Syncfusion.Maui.SunburstChart"   
+             xmlns:local="clr-namespace:ChartControlsThemeDemo"
+             xmlns:switch="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             xmlns:navigationdrawer="clr-namespace:Syncfusion.Maui.NavigationDrawer;assembly=Syncfusion.Maui.NavigationDrawer"
              x:Class="ChartControlsThemeDemo.MainPage">
 
+    <ContentPage.BindingContext>
+        <local:ChartViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <navigationdrawer:SfNavigationDrawer x:Name="navigationDrawer">
+
+            <navigationdrawer:SfNavigationDrawer.DrawerSettings>
+                <navigationdrawer:DrawerSettings DrawerWidth="220" DrawerHeaderHeight="160">
+                    <navigationdrawer:DrawerSettings.DrawerHeaderView>
+                        <Grid Padding="0,20,0,0" RowDefinitions="80,40" BackgroundColor="#7f66c5">
+                            <Image Source="chart.png" VerticalOptions="Center" HeightRequest="80"
+                           Margin="0,10,0,0" BackgroundColor="#6750A4" HorizontalOptions="Center"/>
+                            <Label Grid.Row="1" Text="Chart Types" VerticalOptions="End" HorizontalOptions="Center"
+                           FontSize="20" TextColor="White"/>
+                        </Grid>
+                    </navigationdrawer:DrawerSettings.DrawerHeaderView>
+
+                    <navigationdrawer:DrawerSettings.DrawerContentView>
+
+                        <Grid RowDefinitions="7*,1.5*" >
+
+                            <ListView Grid.Row="0" x:Name="listView" ItemsSource="{Binding ChartTypes}" ItemSelected="listView_ItemSelected">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout Padding="5">
+                                                <Label Text="{Binding}" FontSize="18" Margin="40,0,0,10"/>
+                                                <BoxView BackgroundColor="#7f66c5" HeightRequest="0.5" WidthRequest="220"/>
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+
+                            <Border Grid.Row="1" StrokeShape="RoundRectangle 10" StrokeThickness="1.5" Margin="3"
+                              HorizontalOptions="Fill" Stroke="#7f66c4">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                    <Label Text="Change Theme" VerticalOptions="Center" FontSize="18" 
+                                     FontAttributes="Bold" TextColor="{AppThemeBinding Light=Black, Dark=White}"/>
+                                    <switch:SfSwitch x:Name="switch" Margin="10,0,0,0" IsOn="False" StateChanged="switch_StateChanged"/>
+                                </StackLayout>
+                            </Border>
+                        </Grid>
+
+                    </navigationdrawer:DrawerSettings.DrawerContentView>
+                </navigationdrawer:DrawerSettings>
+            </navigationdrawer:SfNavigationDrawer.DrawerSettings>
+
+            <navigationdrawer:SfNavigationDrawer.ContentView>
+                <Grid x:Name="mainContentView" RowDefinitions="*,9*">
+                    <HorizontalStackLayout BackgroundColor="#6750A4" Spacing="10" Padding="5,0,0,0">
+                        <ImageButton x:Name="hamburgerButton" HeightRequest="40" WidthRequest="50"  HorizontalOptions="Start"
+                       Source="choice.png" BackgroundColor="#6750A4" Clicked="hamburgerButton_Clicked"/>
+                    </HorizontalStackLayout>
+
+                    <!--#region Cartesian Chart -->
+
+                    <chart:SfCartesianChart Grid.Row="1" x:Name="cartesian">
+
+                        <chart:SfCartesianChart.Legend>
+                            <chart:ChartLegend ToggleSeriesVisibility="True"/>
+                        </chart:SfCartesianChart.Legend>
+
+                        <chart:SfCartesianChart.Title>
+                            <Label FontSize="17" Text="Inflation - Consumer Prices" HorizontalTextAlignment="Center"/>
+                        </chart:SfCartesianChart.Title>
+
+                        <chart:SfCartesianChart.XAxes>
+                            <chart:CategoryAxis ShowMajorGridLines="false" Interval="2" PlotOffsetStart="10" PlotOffsetEnd="10" AxisLineOffset="10">
+                                <chart:CategoryAxis.MajorTickStyle>
+                                    <chart:ChartAxisTickStyle TickSize="10">
+                                    </chart:ChartAxisTickStyle>
+                                </chart:CategoryAxis.MajorTickStyle>
+                            </chart:CategoryAxis>
+
+                        </chart:SfCartesianChart.XAxes>
+                        <chart:SfCartesianChart.YAxes>
+                            <chart:NumericalAxis Maximum="100" Minimum="0" Interval="20">
+                                <chart:NumericalAxis.LabelStyle>
+                                    <chart:ChartAxisLabelStyle LabelFormat="0'%"/>
+                                </chart:NumericalAxis.LabelStyle>
+                                <chart:NumericalAxis.AxisLineStyle>
+                                    <chart:ChartLineStyle StrokeWidth="0">
+                                    </chart:ChartLineStyle>
+                                </chart:NumericalAxis.AxisLineStyle>
+                                <chart:NumericalAxis.MajorTickStyle>
+                                    <chart:ChartAxisTickStyle TickSize="0" />
+                                </chart:NumericalAxis.MajorTickStyle>
+                            </chart:NumericalAxis>
+                        </chart:SfCartesianChart.YAxes>
+
+                        <chart:SfCartesianChart.Series>
+                            <chart:LineSeries ItemsSource="{Binding LineData1}" XBindingPath="XValue" YBindingPath="YValue"
+                        Label="Germany" EnableTooltip="True" Fill="#314A6E"
+                        StrokeWidth="1" ShowMarkers="True" LegendIcon="SeriesType">
+                                <chart:LineSeries.MarkerSettings>
+                                    <chart:ChartMarkerSettings Width="8" Height="8" Fill="#314A6E"/>
+                                </chart:LineSeries.MarkerSettings>
+                            </chart:LineSeries>
+
+                            <chart:LineSeries ItemsSource="{Binding LineData2}" XBindingPath="XValue" YBindingPath="YValue"
+                     Label="England" EnableTooltip="True" Fill="#48988B"
+              StrokeWidth="1" ShowMarkers="True" LegendIcon="SeriesType">
+                                <chart:LineSeries.MarkerSettings>
+                                    <chart:ChartMarkerSettings Width="8" Height="8" Fill="#48988B"/>
+                                </chart:LineSeries.MarkerSettings>
+                            </chart:LineSeries>
+
+                        </chart:SfCartesianChart.Series>
+                    </chart:SfCartesianChart>
+
+                    <!--#endregion-->
+
+                    <!--#region Circular Chart -->
+
+                    <chart:SfCircularChart Grid.Row="1" x:Name="circular" IsVisible="False">
+
+                        <chart:SfCircularChart.Title>
+                            <Label FontSize="17" Text="Sales by a Salesperson"  HorizontalTextAlignment="Center"/>
+
+                        </chart:SfCircularChart.Title>
+
+                        <chart:SfCircularChart.Legend>
+                            <chart:ChartLegend/>
+                        </chart:SfCircularChart.Legend>
+
+                        <chart:SfCircularChart.Series>
+                            <chart:PieSeries ItemsSource="{Binding PieSeriesData}" XBindingPath="XValue" YBindingPath="YValue"
+                        ShowDataLabels="True" StrokeWidth="2" Stroke="White"  EnableTooltip="True"
+                        LegendIcon="SeriesType" PaletteBrushes="{Binding PaletteBrushes}">
+
+                                <chart:PieSeries.DataLabelSettings>
+                                    <chart:CircularDataLabelSettings LabelPlacement="Outer">
+                                        <chart:CircularDataLabelSettings.LabelStyle>
+                                            <chart:ChartDataLabelStyle LabelFormat="#.##'%"/>
+                                        </chart:CircularDataLabelSettings.LabelStyle>
+                                    </chart:CircularDataLabelSettings>
+                                </chart:PieSeries.DataLabelSettings>
+                            </chart:PieSeries>
+
+                        </chart:SfCircularChart.Series>
+                    </chart:SfCircularChart>
+
+                    <!--#endregion-->
+
+                    <!--#region Funnel Chart -->
+
+                    <chart:SfFunnelChart Grid.Row="1" x:Name="funnel" IsVisible="False"
+                   ItemsSource="{Binding FunnelData}" XBindingPath="XValue" YBindingPath="YValue"
+                   ShowDataLabels="True" PaletteBrushes="{Binding PaletteBrushes}" 
+                   StrokeWidth="2" Stroke="White" EnableTooltip="True">
+
+                        <chart:SfFunnelChart.Title>
+                            <Label FontSize="17" Text="Website Conversion Rate" HorizontalTextAlignment="Center"/>
+                        </chart:SfFunnelChart.Title>
+
+                        <chart:SfFunnelChart.Legend>
+                            <chart:ChartLegend Placement="Bottom">
+                            </chart:ChartLegend>
+                        </chart:SfFunnelChart.Legend>
+
+                        <chart:SfFunnelChart.DataLabelSettings>
+                            <chart:FunnelDataLabelSettings>
+                                <chart:FunnelDataLabelSettings.LabelStyle>
+                                    <chart:ChartDataLabelStyle LabelFormat="0'%" Margin="1"/>
+                                </chart:FunnelDataLabelSettings.LabelStyle>
+                            </chart:FunnelDataLabelSettings>
+                        </chart:SfFunnelChart.DataLabelSettings>
+
+                    </chart:SfFunnelChart>
+
+                    <!--#endregion-->
+
+                    <!--#region Pyramid Chart -->
+
+                    <chart:SfPyramidChart Grid.Row="1" x:Name="pyramid" IsVisible="False"
+                     ItemsSource="{Binding PyramidData}" XBindingPath="XValue" YBindingPath="YValue" 
+                     PaletteBrushes="{Binding PaletteBrushes}" StrokeWidth="2" Stroke="White"
+                     EnableTooltip="True" ShowDataLabels="True" LegendIcon="SeriesType">
+
+                        <chart:SfPyramidChart.DataLabelSettings>
+                            <chart:PyramidDataLabelSettings UseSeriesPalette="False">
+                                <chart:PyramidDataLabelSettings.LabelStyle>
+                                    <chart:ChartDataLabelStyle LabelFormat="0'%" Margin="0.5"/>
+                                </chart:PyramidDataLabelSettings.LabelStyle>
+                            </chart:PyramidDataLabelSettings>
+                        </chart:SfPyramidChart.DataLabelSettings>
+
+                        <chart:SfPyramidChart.Legend>
+                            <chart:ChartLegend/>
+                        </chart:SfPyramidChart.Legend>
+
+                        <chart:SfPyramidChart.Title>
+                            <Label FontSize="17" Text="Average Rates of Learning Retention"  HorizontalTextAlignment="Center"/>
+                        </chart:SfPyramidChart.Title>
+                    </chart:SfPyramidChart>
+
+                    <!--#endregion-->
+
+                    <!--#region Sunburst Chart -->
+
+                    <sunburst:SfSunburstChart Grid.Row="1" x:Name="sunburst" IsVisible="False" 
+                       ItemsSource="{Binding DataSource}" ValueMemberPath="Sales" ShowLabels="True"
+                       PaletteBrushes="{Binding CustomBrush}" InnerRadius="0.2" EnableTooltip="True">
+
+                        <sunburst:SfSunburstChart.Title>
+                            <Label FontSize="17" Text="Visual Perspective of Sales Performance" 
+                             HorizontalTextAlignment="Center"/>
+                        </sunburst:SfSunburstChart.Title>
+
+                        <sunburst:SfSunburstChart.Legend>
+                            <sunburst:SunburstLegend/>
+                        </sunburst:SfSunburstChart.Legend>
+
+                        <sunburst:SfSunburstChart.Levels>
+                            <sunburst:SunburstHierarchicalLevel GroupMemberPath="Quarter"/>
+                            <sunburst:SunburstHierarchicalLevel GroupMemberPath="Month"/>
+                            <sunburst:SunburstHierarchicalLevel GroupMemberPath="Week"/>
+                        </sunburst:SfSunburstChart.Levels>
+                    </sunburst:SfSunburstChart>
+
+                    <!--#endregion-->
+
+                </Grid>
+            </navigationdrawer:SfNavigationDrawer.ContentView>
+        </navigationdrawer:SfNavigationDrawer>
+
+    </ContentPage.Content>
 </ContentPage>

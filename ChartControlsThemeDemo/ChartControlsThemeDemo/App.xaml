@@ -11,7 +11,7 @@
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
 
                 <syncTheme:SyncfusionThemeResourceDictionary VisualTheme="MaterialLight"/>
-                
+
                 <!--<ResourceDictionary>
                     
                                     --><!--Cartesian Chart--><!--

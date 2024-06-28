@@ -6,34 +6,19 @@
     <ActiveDebugProfile>Windows Machine</ActiveDebugProfile>
   </PropertyGroup>
   <ItemGroup>
-    <MauiXaml Update="CartesianChart\CartesianChartDemo.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
     <MauiXaml Update="CartesianChart\SfCartesianChartThemeKeys.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
-    <MauiXaml Update="CircularChart\CircularChartDemo.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="CircularChart\SfCircularChartThemeKeys.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="FunnelChart\FunnelChartDemo.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
     <MauiXaml Update="FunnelChart\SfFunnelChartThemeKeys.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
-    <MauiXaml Update="PyramidChart\PyramidChartDemo.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="PyramidChart\SfPyramidChartThemeKeys.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="SunburstChart\SfSunburstChartThemeKeys.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
-    <MauiXaml Update="SunburstChart\SunburstChartDemo.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
   </ItemGroup>
