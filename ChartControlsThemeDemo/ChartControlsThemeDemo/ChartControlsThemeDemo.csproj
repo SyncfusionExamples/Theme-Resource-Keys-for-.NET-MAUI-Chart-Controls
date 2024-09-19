@@ -73,7 +73,6 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 		<PackageReference Include="Syncfusion.Maui.Buttons" Version="*" />
 		<PackageReference Include="Syncfusion.Maui.Charts" Version="*" />
-		<PackageReference Include="Syncfusion.Maui.NavigationDrawer" Version="26.1.39" />
 		<PackageReference Include="Syncfusion.Maui.SunburstChart" Version="*" />
 	</ItemGroup>
 
@@ -81,16 +80,28 @@
 	  <MauiXaml Update="CartesianChart\SfCartesianChartThemeKeys.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="CircularChart\CircularChartDemo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="CircularChart\SfCircularChartThemeKeys.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="FunnelChart\FunnelChartDemo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="FunnelChart\SfFunnelChartThemeKeys.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="PyramidChart\PyramidChartDemo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="PyramidChart\SfPyramidChartThemeKeys.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="SunburstChart\SfSunburstChartThemeKeys.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="SunburstChart\SunburstChartDemo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

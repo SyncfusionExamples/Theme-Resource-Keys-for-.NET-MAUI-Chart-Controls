@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChartControlsThemeDemo.SunburstChartDemo"
+             xmlns:chart="clr-namespace:Syncfusion.Maui.SunburstChart;assembly=Syncfusion.Maui.SunburstChart"
+             xmlns:local="clr-namespace:ChartControlsThemeDemo">
+
+    <ContentPage.BindingContext>
+        <local:ChartViewModel/>
+    </ContentPage.BindingContext>
+
+    <chart:SfSunburstChart x:Name="sunburstChart" ItemsSource="{Binding SunburstData}" 
+                    ValueMemberPath="Sales" ShowLabels="True" PaletteBrushes="{Binding CustomBrush}" 
+                    InnerRadius="0.2" EnableTooltip="True">
+        
+        <chart:SfSunburstChart.Title>
+            <Label Text="Visual Perspective of Sales Performance" 
+                   FontAttributes="Bold" Margin="0" HorizontalOptions="Fill" 
+                   HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="18"/>
+        </chart:SfSunburstChart.Title>
+        
+        <chart:SfSunburstChart.Legend>
+            <chart:SunburstLegend/>
+        </chart:SfSunburstChart.Legend>
+        
+        <chart:SfSunburstChart.Levels>
+            <chart:SunburstHierarchicalLevel GroupMemberPath="Quarter"/>
+            <chart:SunburstHierarchicalLevel GroupMemberPath="Month"/>
+            <chart:SunburstHierarchicalLevel GroupMemberPath="Week"/>
+        </chart:SfSunburstChart.Levels>
+        
+    </chart:SfSunburstChart>
+    
+</ContentPage>

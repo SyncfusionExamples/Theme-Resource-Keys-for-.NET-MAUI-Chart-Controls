@@ -4,7 +4,6 @@ namespace ChartControlsThemeDemo
 {
     public class ChartViewModel
     {
-        public ObservableCollection<string> ChartTypes { get; set; }
         public ObservableCollection<Brush> PaletteBrushes { get; set; }
         public ObservableCollection<Brush> CustomBrush { get; set; }
         public ObservableCollection<ChartModel> LineData1 { get; set; }
@@ -12,20 +11,10 @@ namespace ChartControlsThemeDemo
         public ObservableCollection<ChartModel> PieSeriesData { get; set; }
         public ObservableCollection<ChartModel> FunnelData { get; set; }
         public ObservableCollection<ChartModel> PyramidData { get; set; }
-        public ObservableCollection<ChartModel> DataSource { get; set; }
+        public ObservableCollection<ChartModel> SunburstData { get; set; }
 
         public ChartViewModel()
         {
-
-            ChartTypes = new ObservableCollection<string>()
-            {
-                "Cartesian Chart",
-                "Circular Chart",
-                "Funnel Chart",
-                "Pyramid Chart",
-                "Sunburst Chart",
-            };
-
             PaletteBrushes = new ObservableCollection<Brush>()
             {
                new SolidColorBrush(Color.FromArgb("#314A6E")),
@@ -93,7 +82,7 @@ namespace ChartControlsThemeDemo
                  new ChartModel("Teach Others", 90),
             };
 
-            DataSource = new ObservableCollection<ChartModel>
+            SunburstData = new ObservableCollection<ChartModel>
             {
                 new ChartModel(11, "Q1", "Jan"),
                 new ChartModel(8, "Q1", "Feb"),

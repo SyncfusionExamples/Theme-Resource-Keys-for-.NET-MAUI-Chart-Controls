@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChartControlsThemeDemo.PyramidChartDemo"
+             xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
+             xmlns:local="clr-namespace:ChartControlsThemeDemo">
+
+    <ContentPage.BindingContext>
+        <local:ChartViewModel/>
+    </ContentPage.BindingContext>
+    
+    <chart:SfPyramidChart ItemsSource="{Binding PyramidData}" XBindingPath="XValue" YBindingPath="YValue"
+                          PaletteBrushes="{Binding PaletteBrushes}" StrokeWidth="2" Stroke="White"
+                          EnableTooltip="True" ShowDataLabels="True" LegendIcon="SeriesType">
+        
+        <chart:SfPyramidChart.DataLabelSettings>
+            <chart:PyramidDataLabelSettings UseSeriesPalette="False">
+                <chart:PyramidDataLabelSettings.LabelStyle>
+                    <chart:ChartDataLabelStyle LabelFormat="0'%" Margin="0.5"/>
+                </chart:PyramidDataLabelSettings.LabelStyle>
+            </chart:PyramidDataLabelSettings>
+        </chart:SfPyramidChart.DataLabelSettings>
+
+        <chart:SfPyramidChart.Legend>
+            <chart:ChartLegend/>
+        </chart:SfPyramidChart.Legend>
+
+        <chart:SfPyramidChart.Title>
+            <Label Text="Average Rates of Learning Retention" HorizontalOptions="Fill" HorizontalTextAlignment="Center"
+                   VerticalOptions="Center" FontSize="16"/>
+        </chart:SfPyramidChart.Title>
+        
+    </chart:SfPyramidChart>
+    
+</ContentPage>

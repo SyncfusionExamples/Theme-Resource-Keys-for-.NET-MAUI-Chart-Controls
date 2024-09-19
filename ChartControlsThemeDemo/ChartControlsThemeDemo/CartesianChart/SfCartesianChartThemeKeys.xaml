@@ -4,7 +4,6 @@
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              x:Class="ChartControlsThemeDemo.SfCartesianChartThemeKeys">
 
-
     <x:String x:Key="SfCartesianChartTheme">CommonTheme</x:String>
 
     <Color x:Key="SfCartesianChartBackground"/>
@@ -61,6 +60,5 @@
     <Color x:Key="SfCartesianChartLegendTextColor"/>
     <sys:Double x:Key="SfCartesianChartLegendFontSize"/>
     <Color x:Key="SfCartesianChartLegendDisableBrush"/>
-
 
 </ResourceDictionary>

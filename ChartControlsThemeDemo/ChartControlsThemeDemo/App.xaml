@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:ChartControlsThemeDemo"  
              xmlns:syncTheme="clr-namespace:Syncfusion.Maui.Themes;assembly=Syncfusion.Maui.Core"
              x:Class="ChartControlsThemeDemo.App">
+    
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
