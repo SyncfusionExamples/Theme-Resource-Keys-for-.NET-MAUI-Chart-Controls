@@ -8,7 +8,7 @@
         <local:ChartViewModel/>
     </ContentPage.BindingContext>
     
-    <chart:SfCartesianChart>
+    <chart:SfCartesianChart Margin="0,20,0,0">
 
         <chart:SfCartesianChart.Legend>
             <chart:ChartLegend>

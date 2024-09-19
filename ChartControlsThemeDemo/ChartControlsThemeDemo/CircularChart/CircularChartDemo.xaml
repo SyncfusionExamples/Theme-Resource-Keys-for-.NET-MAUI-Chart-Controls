@@ -8,8 +8,8 @@
     <ContentPage.BindingContext>
         <local:ChartViewModel/>
     </ContentPage.BindingContext>
-    
-    <chart:SfCircularChart>
+
+    <chart:SfCircularChart Margin="0,20,0,0">
 
         <chart:SfCircularChart.Title>
             <Label Text="Sales by a Salesperson" Margin="0,0,6,10" HorizontalOptions="Fill"

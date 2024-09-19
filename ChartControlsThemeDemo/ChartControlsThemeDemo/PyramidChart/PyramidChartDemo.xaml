@@ -11,7 +11,7 @@
     
     <chart:SfPyramidChart ItemsSource="{Binding PyramidData}" XBindingPath="XValue" YBindingPath="YValue"
                           PaletteBrushes="{Binding PaletteBrushes}" StrokeWidth="2" Stroke="White"
-                          EnableTooltip="True" ShowDataLabels="True" LegendIcon="SeriesType">
+                          EnableTooltip="True" ShowDataLabels="True" LegendIcon="SeriesType" Margin="0,20,0,0">
         
         <chart:SfPyramidChart.DataLabelSettings>
             <chart:PyramidDataLabelSettings UseSeriesPalette="False">

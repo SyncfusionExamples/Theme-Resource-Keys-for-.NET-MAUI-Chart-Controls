@@ -11,7 +11,7 @@
     
     <chart:SfFunnelChart ItemsSource="{Binding FunnelData}" XBindingPath="XValue" YBindingPath="YValue"
                        ShowDataLabels="True" PaletteBrushes="{Binding PaletteBrushes}" 
-                       StrokeWidth="2" Stroke="White" EnableTooltip="True">
+                       StrokeWidth="2" Stroke="White" EnableTooltip="True" Margin="0,20,0,0">
         
         <chart:SfFunnelChart.Title>
             <Label Text="Website Conversion Rate" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="16" />
