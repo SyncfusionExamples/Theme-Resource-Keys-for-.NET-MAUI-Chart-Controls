@@ -11,7 +11,7 @@
 
     <chart:SfSunburstChart x:Name="sunburstChart" ItemsSource="{Binding SunburstData}" 
                     ValueMemberPath="Sales" ShowLabels="True" PaletteBrushes="{Binding CustomBrush}" 
-                    InnerRadius="0.2" EnableTooltip="True">
+                    InnerRadius="0.2">
         
         <chart:SfSunburstChart.Title>
             <Label Text="Visual Perspective of Sales Performance" 

@@ -22,7 +22,11 @@
         </chart:SfPyramidChart.DataLabelSettings>
 
         <chart:SfPyramidChart.Legend>
-            <chart:ChartLegend/>
+            <chart:ChartLegend>
+                <chart:ChartLegend.LabelStyle>
+                    <chart:ChartLegendLabelStyle TextColor="{AppThemeBinding Light=Black,Dark=White}"/>
+                </chart:ChartLegend.LabelStyle>
+            </chart:ChartLegend>
         </chart:SfPyramidChart.Legend>
 
         <chart:SfPyramidChart.Title>

@@ -17,7 +17,11 @@
         </chart:SfCircularChart.Title>
 
         <chart:SfCircularChart.Legend>
-            <chart:ChartLegend/>
+            <chart:ChartLegend>
+                <chart:ChartLegend.LabelStyle>
+                    <chart:ChartLegendLabelStyle TextColor="{AppThemeBinding Light=Black,Dark=White}"/>
+                </chart:ChartLegend.LabelStyle>
+            </chart:ChartLegend>
         </chart:SfCircularChart.Legend>
 
         <chart:SfCircularChart.Series>
