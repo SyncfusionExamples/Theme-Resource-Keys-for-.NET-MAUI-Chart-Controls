@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ChartControlsThemeDemo.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+    xmlns:local="clr-namespace:ChartControlsThemeDemo"
+    Shell.FlyoutWidth="200"
+    Shell.FlyoutBackground="#8f80d4"
+    xmlns:switch="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+    Shell.FlyoutBehavior="Locked"
+    Title="ChartControlsThemeDemo">
+
+    <Shell.FlyoutHeader>
+        <Grid Padding="0,0,0,50" RowDefinitions="40,80" HorizontalOptions="Center">
+            <Label Grid.Row="0" Text="Chart Types" VerticalOptions="End" HorizontalOptions="Center"
+                    FontSize="20" Margin="0,0,5,0" TextColor="White" FontAttributes="Bold"/>
+            <Image Grid.Row="1" Source="chart.png" VerticalOptions="Center" HeightRequest="80"
+                    Margin="0,10,20,0" BackgroundColor="#8f80d4" HorizontalOptions="Center"/>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid>
+                <Label TextColor="White" FontSize="17" Margin="5,10,5,10"
+                       Text="{Binding Title}" VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <Shell.FlyoutFooter>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Label Text="Change Theme" VerticalOptions="Center" FontSize="18" 
+                FontAttributes="Bold" TextColor="White"/>
+            <switch:SfSwitch x:Name="switch" Margin="10,0,0,0" IsOn="False" StateChanged="switch_StateChanged"/>
+        </StackLayout>
+    </Shell.FlyoutFooter>
+
+    <ShellContent Title="Cartesian Chart" Route="page1" Shell.NavBarIsVisible="False" 
+                 
+                 ContentTemplate="{DataTemplate local:CartesianChartDemo}"  />
+    <ShellContent Title="Circular Chart" Route="page2" Shell.NavBarIsVisible="False"
+               ContentTemplate="{DataTemplate local:CircularChartDemo}" />
+    <ShellContent Title="Funnel Chart" Route="page3" Shell.NavBarIsVisible="False"
+                ContentTemplate="{DataTemplate local:FunnelChartDemo}"  />
+    <ShellContent Title="Pyramid Chart" Route="page4" Shell.NavBarIsVisible="False"
+               ContentTemplate="{DataTemplate local:PyramidChartDemo}" />
+    <ShellContent Title="Sunburst Chart" Route="page5" Shell.NavBarIsVisible="False"
+               ContentTemplate="{DataTemplate local:SunburstChartDemo}" />
+</Shell>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChartControlsThemeDemo.CircularChartDemo"
+             xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
+             xmlns:local="clr-namespace:ChartControlsThemeDemo">
+
+    <ContentPage.BindingContext>
+        <local:ChartViewModel/>
+    </ContentPage.BindingContext>
+
+    <chart:SfCircularChart Margin="0,20,0,0">
+
+        <chart:SfCircularChart.Title>
+            <Label Text="Sales by a Salesperson" Margin="0,0,6,10" HorizontalOptions="Fill"
+                   HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="16"/>
+        </chart:SfCircularChart.Title>
+
+        <chart:SfCircularChart.Legend>
+            <chart:ChartLegend>
+                <chart:ChartLegend.LabelStyle>
+                    <chart:ChartLegendLabelStyle TextColor="{AppThemeBinding Light=Black,Dark=White}"/>
+                </chart:ChartLegend.LabelStyle>
+            </chart:ChartLegend>
+        </chart:SfCircularChart.Legend>
+
+        <chart:SfCircularChart.Series>
+            <chart:PieSeries ItemsSource="{Binding PieSeriesData}" XBindingPath="XValue" YBindingPath="YValue"
+                             ShowDataLabels="True" StrokeWidth="2" Stroke="White"  EnableTooltip="True"
+                             LegendIcon="SeriesType" PaletteBrushes="{Binding PaletteBrushes}">
+
+                <chart:PieSeries.DataLabelSettings>
+                    <chart:CircularDataLabelSettings LabelPlacement="Outer">
+                        <chart:CircularDataLabelSettings.LabelStyle>
+                            <chart:ChartDataLabelStyle LabelFormat="#.##'%"/>
+                        </chart:CircularDataLabelSettings.LabelStyle>
+                    </chart:CircularDataLabelSettings>
+                </chart:PieSeries.DataLabelSettings>
+            </chart:PieSeries>
+        </chart:SfCircularChart.Series>
+        
+    </chart:SfCircularChart>
+    
+</ContentPage>
