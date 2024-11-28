@@ -9,7 +9,7 @@
         <local:ChartViewModel/>
     </ContentPage.BindingContext>
 
-    <chart:SfSunburstChart x:Name="sunburstChart" ItemsSource="{Binding SunburstData}" 
+    <chart:SfSunburstChart x:Name="sunburstChart" ItemsSource="{Binding SunburstData}"  EnableTooltip="True"
                     ValueMemberPath="Sales" ShowLabels="True" PaletteBrushes="{Binding CustomBrush}" 
                     InnerRadius="0.2" Margin="0,20,0,0">
         
