@@ -37,5 +37,5 @@ If you encounter a "path too long" exception when building this example project,
 For a step-by-step procedure, refer to the following knowledge base articles:
 
 - [How to Configure the Syncfusion Theme for .NET MAUI Cartesian Chart](https://support.syncfusion.com/kb/article/17481/how-to-configure-the-syncfusion-theme-for-net-maui-chartsfcartesianchart)
-- [How to Configure the Syncfusion Theme for .NET MAUI Circular Chart]()
-- [How to Configure the Syncfusion Theme for .NET MAUI Sunburst Chart]()
+- [How to Configure the Syncfusion Theme for .NET MAUI Circular Chart](https://support.syncfusion.com/kb/article/18041/how-to-configure-the-syncfusion-theme-for-net-maui-chartsfcircularchart)
+- [How to Configure the Syncfusion Theme for .NET MAUI Sunburst Chart](https://support.syncfusion.com/kb/article/18211/how-to-configure-the-syncfusion-theme-for-net-maui-sunburst-chart)
